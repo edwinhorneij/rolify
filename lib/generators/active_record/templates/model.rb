@@ -1,4 +1,6 @@
-has_and_belongs_to_many :<%= user_class.table_name %>, :join_table => :<%= join_table %>
+has_many :<%= join_table %>, class_name: ':<%= join_table.camelize %>'
+has_many :<%= user_class.table_name %>, through: :<%= join_table %>
+
 
 <% if Rails::VERSION::MAJOR < 5 %>
 belongs_to :resource,

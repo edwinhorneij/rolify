@@ -44,6 +44,11 @@ module ActiveRecord
         user_class.table_name + "_" + table_name
       end
 
+      def join_model
+        # migration_template "migration.rb", "db/migrate/rolify_create_#{table_name}.rb"
+        # ??? 'join_model.rb', "app/models/#{join_table}.rb"
+      end
+
       def user_reference
         user_cname.demodulize.underscore
       end
